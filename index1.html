@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggle visibility</title>
+    <style>
+        #contentSection{
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 6PX;
+
+        }
+        #toggleBtn{
+            padding: 10px 15px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+        toggleBtn:hover {
+            background: #0056b3;
+        }
+
+    </style>
+</head>
+
+<body>
+    <button id="toggleBtn">
+show/hide the content
+    </button>
+    <section id="contentSection">
+        <h1>hide content </h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis, fuga. Excepturi sit aspernatur
+        </p>
+    </section>
+ <script>
+    const toggleBtn = document.getElementById("toggleBtn");
+    const contentSection = document.getElementById("contentSection");
+    toggleBtn.addEventListener ("click", () =>{
+        if(contentSection.style.display === "none" || !contentSection.style.display)
+    {contentSection.style.display = "Block" ;}
+    else {contentSection.style.display = "none" ;}
+    })
+
+</script> 
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-items: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: bacground-color 0.5s ease;
+        }
+        .container{
+            background-color: white;
+            text-align: center;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0.1);
+
+        }
+        .button{   
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer
+            ;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            transition: background-color 0.3s;
+
+        }
+        button:hover{
+            background-color:  #45a049;
+
+        }
+        #text{
+            transition: color 0.3s ease;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="text">Click the buttons to change colors!</h1>
+        <button id="changeTextColor">Change Text Color</button>
+        <button id="changeBgColor">Change Background Color</button>
+        <button id="resetColors">Reset Colors</button>
+    </div>
+    <script> 
+    const textColors = ['red',  'blue ', 'green', 'purple', 'orange'];
+    const Bgcolors = ['#f0f0f0', '#ffebee', '#e8f5e9', '#e3f2fd', '#f3e5f5'];
+
+    let CurrentTextColorIndex = 0 ;
+    let currentBgColorIndex = 0 ;
+
+    const textElement = document.getElementById('text');
+    const changeTextColorBtn = document.getElementById('changeTextColor');
+    const changeBgColorBtn = document.getElementById('changeBgColor')
+    const resetColorsBtn = document.getElementById('resetColors');
+
+    changeTextColorBtn.addEventListener('click', () => {
+    currentTextColorIndex = (currentTextColorIndex + 1) % textColors.length;
+    textElement.style.color = textColors[currentTextColorIndex];
+});
+
+changeBgColorBtn.addEventListener('click', () => {
+    currentBgColorIndex = (currentBgColorIndex + 1) % bgColors.length;
+    document.body.style.backgroundColor = bgColors[currentBgColorIndex];
+});
+resetColorsBtn.addEventListener('click', () => {
+    textElement.style.color = ''; // Reset to default
+    document.body.style.backgroundColor = ''; // Reset to default
+    currentTextColorIndex = 0;
+    currentBgColorIndex = 0;
+});
+
+
+
+
+
+    
+
+    </script>
+</body>
+</html>
