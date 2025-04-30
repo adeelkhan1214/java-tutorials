@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function </title>
+</head>
+<body>
+    <h2>function</h2>
+    <button style="border: none; border-radius: 3px;
+    background-color: aqua;">function</button>
+<script>
+    let marks = 1
+       for (let i = 0; i <100 ; i++) {
+        console.log(marks+i)
+        
+       }
+    const student1 = {
+        name:"adeel",
+        age:20,
+        grade:"a",
+    }
+    console.log(student1.age.grade)
+    
+    let obj = {
+        name: "Adeel",
+        role:"programmer",
+        company: "prodevolper"
+    }
+
+    for (const key in obj) {
+        console.log(obj)     
+    }
+    for (const c of "programmer") {
+        console.log(c)
+        
+    }
+
+        
+    let num = 0;
+    do {
+      console.log(num)
+       num++
+    } while (num<10);
+
+
+    // function
+
+    function nice(name) {
+        console.log(" hey " + name + " hi how are you!")
+        console.log(" hey " + name + " how is going your work!")
+        console.log(" hey " + name + " i am tururial!")
+        console.log(" hey " + name + " afjfh joawfejev efjwofi-!")
+
+        
+    }
+
+    nice("adeel")
+    nice("shan")
+
+    // sum function
+
+    function sum (a,b){
+        // console.log(a+b)
+        return (a+b)
+    }
+
+   result1= sum(3,5)
+   result2 = sum(5,8)
+   console.log("the sum of these number is: " , result1)
+   console.log("the sum of these number is: " , result2)
+
+//    arrow function
+
+const func1 = (x) => {
+    " i am arrow function ", x
+}
+func1(24);
+func1(66);
+func1(84);
+
+
+// string
+
+let bell = "adeel"
+console.log(bell.length)
+
+// template lateral
+
+let real_name = "adeel"
+let friend = "shan"
+console.log(" his friend name is " + friend + " and his name is " + real_name )
+console.log(` his friend name is  ${friend }  and his name is  ${real_name}`)
+
+// string method
+let a = "adeel"
+console.log(a.toUpperCase())
+console.log(a.toLowerCase())
+console.log(a.length)
+console.log(a.slice(0,4))
+console.log(a.slice(0))
+
+
+console.log(a.replace("ad",18))
+console.log(a.concat(bell,real_name,friend))
+
+// arrays
+
+
+const fruits =["banana","apple","grapes"]
+const list = [7, "cucamber", false]
+
+const arr = [1,2,3,4,5,6,7,8,9]
+console.log(arr.length)
+
+console.log(arr[0])
+console.log(arr[3])
+console.log(arr[5])
+
+console.log(arr.toString())
+console.log(arr.join("and"))
+
+console.log(arr.pop())
+console.log(arr.push())
+console.log(arr.push(100))
+console.log(arr.push("harry"))
+console.log(arr.shift())
+console.log(arr.unshift(100))
+
+
+
+
+
+
+</script>   
+</body>
+</html>
