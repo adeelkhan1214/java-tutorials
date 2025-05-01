@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        body{margin: 0 auto;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        max-width: 580px;
+     }
+     .form-group{margin-bottom: 15px;
+     }
+     label{
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5PX;
+     }
+     input[type="text"],
+     input[type="email"],
+     input[type="password"],
+     textarea{
+        width: 100%;
+        padding: 8PX;
+        border: 1PX solid #ddd;
+        border-radius: 3px;
+        box-sizing: border-box;
+        
+     }
+     textarea{height: 100px;}
+     button {
+        color: wghite;
+        background-color: rgb(53, 139, 53);
+        border: none;
+        border-radius: 3px;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 15px 10px;
+        
+        
+     }
+     button:hover{background-color:rgb(97, 197, 97) ;}
+
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <h1>Registration Form</h1>
+    <form id="registration-form">
+
+        <div class="form-group">
+            <label for="firstName">First name</label>
+            <input type="text" class="firstName" id="firstName" required>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last name</label>
+            <input type="text" id="lastName" class="lastName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" class="email"required>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="text" id="password" class="password" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea name="description" id="description"></textarea>
+        </div>
+        <button type="submit">Submit</button>
+
+    </form>
+    <script>
+        document.addEventListener('DOMContentLoaded',function () {
+            const form = document.getElementById('registration-form');
+            form.addEventListener('submit',function(event) { 
+                event.preventDefault();
+                const firstName = document.getElementById('firstName').value;
+                const lastName = document.getElementById('lastName').value;
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                const description = document.getElementById('description').value;
+
+                const formData = {
+                    firstName:firstName,
+                    lastName:lastName,  
+                    email:email,
+                    password:password,
+                    description:description,
+                };
+                storeFormData(formData);
+                form.reset();
+                alert('your data has been submitted successfully and your data has been saved in local storage')
+            });
+            function storeFormData (data){
+                let storedData = JSON.parse(localStorage.getItem('formsubmissions')) || [];
+                storedData.push(data);
+                localStorage.setItem('formsubmissions', JSON.stringify(storedData));}
+        });
+
+    </script>
+</body>
+
+</html>
