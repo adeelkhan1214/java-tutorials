@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Card</title>
+    <style>
+        .box {
+            display: flex;
+            border: 2px solid black;
+            justify-content: center;
+            width: 900px;
+            align-items: center;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .image img {
+            width: 200px;
+            margin-right: 20px;
+        }
+
+        .text h1 {
+            margin: 0;
+            padding: 2px 0;
+            font-size: 18px;
+        }
+
+        .text p {
+            margin: 5px 0 0 0;
+            color: #555;
+        }
+
+        .capsule {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: #242020;
+            opacity: 0.9;
+            color: white;
+            padding: 3px 6px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        .image {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="image">
+                <img src="ucp image.webp" alt="Video thumbnail">
+                <div class="capsule">31:30</div>
+            </div>
+            <div class="text">
+                <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt, fuga.sigma web development course</h1>
+                <p>code with hary • 274k views • 2 months ago</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function createCard(title, cname, views, monthsOld, duration, thumbnail) {
+            let viewStr;
+            if (views < 1000) {
+                viewStr = views.toString();
+            } else if (views < 1000000) {
+                viewStr = Math.floor(views / 1000) + "k";
+            } else {
+                viewStr = (views / 1000000).toFixed(1) + "M";
+            }
+
+            const html = `<div class="box">
+                <div class="image">
+                    <img src="${thumbnail}" alt="Video thumbnail">
+                    <div class="capsule">${duration}</div>
+                </div>
+                <div class="text">
+                    <h1>${title}</h1>
+                    <p>${cname} • ${viewStr} views • ${monthsOld} month${monthsOld !== 1 ? 's' : ''} ago</p>
+                </div>
+            </div>`;
+            
+            document.querySelector(".container").innerHTML += html;
+        }
+
+        createCard(
+            "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt, fuga.sigma web development course", 
+            "code with hary", 
+            74000, 
+            7, 
+            "31:30", 
+            "ucp image.webp"
+        );
+    </script>
+</body>
+</html>

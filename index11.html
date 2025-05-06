@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom by id clsses</title>
+    <style>
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+        .box{
+            height:45px ;
+            width: 45px;
+            margin:45px ;
+            padding: 
+            34px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+ <body>
+     <div class="container">
+    <div class="box">bupandar jogi</div>
+    <div class="box">bupandar jogi</div>
+    <div class="box">bupandar jogi</div>
+    <div class="box">bupandar jogi</div>
+    <div class="box">bupandar jogi</div>
+</div>
+    <script>
+//         let bopandarjogi =document.getElementsByClassName("box")
+//         console.log(bopandarjogi)
+//         bopandarjogi[2].style.backgroundColor ="green"
+//         bopandarjogi[2].style.hex="#FF5733"
+
+    
+
+//         bopandarjogi[4].style.backgroundColor ="lightblue"
+//         bopandarjogi[3].style.backgroundColor ="pink"
+//         bopandarjogi[1].style.backgroundColor ="blue"
+//         bopandarjogi[0].style.backgroundColor ="violet"
+//         // document.querySelector(".box").style.backgroundColor = ("black ")
+
+
+//         console.log(document.querySelectorAll(".box"))
+//         document.querySelectorAll( ".box").forEach(e => {
+//             e.style.backgroundColor ="lightblue";
+//         })
+//         document.getElementsByTagName("div")
+
+
+// document.getElementsByClassName("box").matches.style.backgroundColor = "red"
+// document.getElementsByClassName("box").closest.style.backgroundColor = "red"
+// document.getElementsByClassName("box").containes.style.backgroundColor = "red"
+// Function to generate random HEX color
+
+
+
+// function getRandomColor() {
+//   const letters = '0123456789ABCDEF';
+//   let color = '#';
+//   for (let i = 0; i < 6; i++) {
+//     color += letters[Math.floor(Math.random() * 16)];
+//   }
+//   return color;
+// }
+
+// // Get all boxes    
+// const boxes = document.querySelectorAll('.box');
+
+// // Assign random colors to each box
+// boxes.forEach((box, index) => {
+//   const bgColor = getRandomColor(); // Random background color
+//   const textColor = getRandomColor(); // Random text color
+
+//   // Apply colors using DOM
+//   box.style.backgroundColor = bgColor;
+//   box.style.color = textColor;
+
+//   // Display color codes
+//   box.textContent = `BG: ${bgColor}\nText: ${textColor}`;
+//   box.style.fontSize = '10px'; // Smaller text for readability
+// });
+//  let boxes = document.getElementsByClassName("box")
+    const boxes = document.querySelector(".container").children;
+    function getRandomColor() {
+        let val1 = Math.ceil (0 + Math.random()*255);
+        let val2 = Math.ceil (0 + Math.random()*255);
+        let val3 = Math.ceil (0 + Math.random()*255);
+        return `rgb(${val1},${val2},${val3  })`;
+        
+    }
+    Array.from(boxes).forEach(e =>{
+        e.style.backgroundColor = getRandomColor()
+        e.style.Color = getRandomColor()
+    })
+
+
+    </script>
+</body>
