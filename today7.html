@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="box1">hi i am a box</div>
+        <p id="box"></p>
+    </div>
+    <script>
+     function myfunction(p1,p2) {
+        return p1*p2
+        
+     }
+     let result =" this is the factor " + myfunction(3,4)+ " look at it this is done through javascript" ; 
+     document.getElementById("box").innerHTML = result
+            
+    // //  using innerHTML
+    // document.getElementById("box").innerHTML = "<h2>hello word</h2>"
+
+    // using innerText
+    // document.getElementById("box").innerText= result
+
+    // using document.write
+    // document.write(5+5)
+    // document.write("adeel"+ "shan")
+
+//     <h2>My First Web Page</h2>
+// <p>My first paragraph.</p>
+
+// <button type="button" onclick="document.write(`<h2>sucessful your are selected </h2>`) ">Try it</button>
+
+// <body>
+
+window.alert()
+
+// <h1>My First Web Page</h1>
+// <p>My first paragraph.</p>
+
+// <script>
+// window.alert(5 + 6);
+// // 
+
+document.print()
+
+
+// <body>
+
+// <h2>The window.print() Method</h2>
+
+// <p>Click the button to print the current page.</p>
+
+// <button onclick="window.print()">Print this page</button>
+
+// </body>
+
+object 
+
+const student ={
+    name:"adeel",
+    age :20,
+    weight:48,
+
+}
+
+// EXAMPLE
+const person = {
+    firstname:"adeel",
+    lastname:"abbas",
+    age:20 ,
+    fullname: function(){
+        return this. firstname + "" + this.lastname; 
+    }
+};
+document.getElementById(".box").innerHTML = person.fullname();
+
+// object in which if any value change also from object
+let person1 = {firstname:"adeel",
+    lastname: "abbas",
+    age:23,
+    eyecolor:"blue"
+}
+const x = person1;
+x.age = 10;
+document.getElementById(".box1").innerHTML =
+person.firstname+ "is" + person.age+ "years old.";
+
+ 
+
+
+    
+    </script>
+</body>
+</html>
