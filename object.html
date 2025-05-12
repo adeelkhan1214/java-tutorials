@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            border: 2px solid #ddd;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 8px;
+        }
+        button{ 
+            background-color: aquamarine;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Even/Odd Calculate through For loop and While loop</h2>
+        <div>
+            <label for="number">Enter any number</label>
+            <input type="number" id="number" placeholder="enter a number">
+        </div>
+        <div>
+            <label for="number">Enter tablelength</label>
+            <input type="number" id="tablelength" placeholder="enter tablelength">
+            <button onclick="checkNumber()">check & generate number </button>
+            <div id="result" class="result"></div>
+            <div id="tableresult"></div>
+        </div>
+    </div>
+    <script>
+        function checkNumber() {
+            const numInput = document.getElementById("number");
+            const lengthInput = document.getElementById("tablelength");
+            const resultDiv = document.getElementById("tableresult");
+            const tableDiv = document.getElementById("result");
+
+            const number = parseInt(numInput.value);
+            const length = parseInt(lengthInput.value);
+
+            resultDiv.innerHTML = "";
+            tableDiv.innerHTML = "";
+            if (isNaN(number) || isNaN(length)) {
+                resultDiv.innerHTML = "Please enter a valid number!";
+                return;
+            }
+            if (number % 2 === 0) { resultDiv.innerHTML = `${number} is <strong>even</strong>` }
+            else {
+                resultDiv.innerHTML = `${number} is <strong>odd</strong>`
+
+            }
+            resultDiv.innerHTML += `<h3> Multipication of table is ${number} (up to ${length})</h3>`;
+
+            resultDiv.innerHTML += `<h4> multplication through for loop:</h4>`;
+            let forTable = `<table><tr><th>Multiplier </th><th>Result</th><tr>`;
+            for (let i = 1; i <= length; i++) {
+                forTable += `<tr><td> ${number} *${i}</td><td> ${number * i}</td><tr>`;
+
+            }
+            forTable += `</table>`;
+            tableDiv.innerHTML += forTable;
+
+            resultDiv.innerHTML += `<h4> multplication through while loop:</h4>`;
+            let whileTable = `<table><tr><th>Multiplier </th><th>Result</th><tr>`;
+            let k = 1;
+            while (k <= length) {
+                whileTable += `<tr><td> ${number} *${k}</td><td> ${number * k}</td><tr>`;
+                    k++ ;
+
+            }
+            whileTable += `</table>`
+            tableDiv.innerHTML += whileTable;
+
+            resultDiv.innerHTML += `<h4> multplication through do-while loop:</h4>`;
+            let dowhileTable = `<table><tr><th>Multiplier </th><th>Result</th><tr>`;
+                let j = 1
+                do { dowhileTable += `<tr><td> ${number} *${j}</td><td> ${number * j}</td><tr>`;
+                    j++ ;
+                    
+                } while (j<=length);
+                dowhileTable += `</table>`
+                tableDiv.innerHTML += dowhileTable;
+
+
+        }
+    </script>
+</body>
+
+</html>
