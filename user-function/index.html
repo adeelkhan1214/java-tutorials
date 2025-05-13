@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user-fuction</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <h1>Student Information System</h1>
+
+    <div class="form-container">
+        <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" required>
+        </div>
+
+        <div class="form-group">
+            <label for="studentClass">Class</label>
+            <select id="studentClass" required>
+                <option value="">Select Class</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+        </div>
+
+        <h3>Subject Marks (out of 100)</h3>
+
+        <div class="form-group">
+            <label for="math">Mathematics</label>
+            <input type="number" id="math" min="0" max="100" required>
+        </div>
+
+        <div class="form-group">
+            <label for="science">Science</label>
+            <input type="number" id="science" min="0" max="100" required>
+        </div>
+
+        <div class="form-group">
+            <label for="english">English</label>
+            <input type="number" id="english" min="0" max="100" required>
+        </div>
+
+        <div class="form-group">
+            <label for="history">History</label>
+            <input type="number" id="history" min="0" max="100" required>
+        </div>
+
+        <div class="form-group">
+            <label for="geography">Geography</label>
+            <input type="number" id="geography" min="0" max="100" required>
+        </div>
+
+        <button onclick="processStudentInfo()">Generate Report</button>
+    </div>
+
+    <div class="result-container" id="resultContainer">
+        <h2>Student Report Card</h2>
+
+        <div class="student-card">
+            <div class="student-info">
+                <div><span class="highlight" id="displayName"></span></div>
+                <div>Class: <span id="displayClass"></span></div>
+                <div>City: <span id="displayCity"></span></div>
+                <div>Phone: <span id="displayPhone"></span></div>
+            </div>
+
+            <div class="subject-marks">
+                <h3>Subject Marks</h3>
+                <div class="subject-row">
+                    <span>Mathematics:</span>
+                    <span id="displayMath"></span>
+                </div>
+                <div class="subject-row">
+                    <span>Science:</span>
+                    <span id="displayScience"></span>
+                </div>
+                <div class="subject-row">
+                    <span>English:</span>
+                    <span id="displayEnglish"></span>
+                </div>
+                <div class="subject-row">
+                    <span>History:</span>
+                    <span id="displayHistory"></span>
+                </div>
+                <div class="subject-row">
+                    <span>Geography:</span>
+                    <span id="displayGeography"></span>
+                </div>
+                <div class="subject-row highlight">
+                    <span>Total Marks:</span>
+                    <span id="displayTotal"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="percentage" id="percentageDisplay">
+            Percentage: <span id="displayPercentage"></span>%
+        </div>
+
+        <div class="status" id="statusDisplay"></div>
+    </div>
+    <script>
+        function processStudentInfo() {
+            let firstName = document.getElementById('firstName').value;
+            let lastName = document.getElementById('lastName').value;
+            let city = document.getElementById('city').value;
+            let phone = document.getElementById('phone').value;
+            let studentClass = document.getElementById('studentClass').value;
+            const subjectMarks = {
+                math: parseInt(document.getElementById('math').value),
+                science: parseInt(document.getElementById('science').value),
+                english: parseInt(document.getElementById('english').value),
+                history: parseInt(document.getElementById('history').value),
+                geography: parseInt(document.getElementById('geography').value)
+            };
+            const studentData = studentInfo(
+                firstName,
+                lastName,
+                city,
+                phone,
+                studentClass,
+                subjectMarks
+            );
+            displayStudentInfo(studentData);
+        }
+        function studentInfo(firstName, lastName, city, phoneNumber, studentClass, subjectMarks) {
+            const totalMarks = subjectMarks.math + subjectMarks.science +
+                subjectMarks.english + subjectMarks.history +
+                subjectMarks.geography;
+            const percentage = (totalMarks / 500) * 100;
+
+            const failedSubjects = [];
+            for (const [subject, marks] of Object.entries(subjectMarks)) {
+                if (marks < 33) { failedSubjects.push(subject); }
+            }
+            const overallStatus = percentage >= 33 && failedSubjects.length === 0 ? 'pass' : 'fail';
+
+            return {
+                fullName: `${firstName} ${lastName}`,
+                firstName: firstName,
+                lastName: lastName,
+                city: city,
+                phoneNumber: phoneNumber,
+                class: studentClass,
+                subjects: subjectMarks,
+                totalMarks: totalMarks,
+                percentage: percentage.toFixed(2),
+                failedSubjects: failedSubjects,
+                status: overallStatus
+            };
+        }
+        function displayStudentInfo(studentData) {
+            document.getElementById('displayName').textContent = studentData.fullName;
+            document.getElementById('displayClass').textContent = studentData.class;
+            document.getElementById('displayCity').textContent = studentData.city;
+            document.getElementById('displayPhone').textContent = studentData.phoneNumber;
+
+            document.getElementById('displayMath').textContent = studentData.subjects.math;
+            document.getElementById('displayMath').className = studentData.failedSubjects.includes('math') ? 'subject-fail' : '';
+
+            document.getElementById('displayScience').textContent = studentData.subjects.science;
+            document.getElementById('displayScience').className = studentData.failedSubjects.includes('science') ? 'subject-fail' : '';
+
+            document.getElementById('displayEnglish').textContent = studentData.subjects.english;
+            document.getElementById('displayEnglish').className = studentData.failedSubjects.includes('english') ? 'subject-fail' : '';
+
+            document.getElementById('displayHistory').textContent = studentData.subjects.history;
+            document.getElementById('displayHistory').className = studentData.failedSubjects.includes('history') ? 'subject-fail' : '';
+
+            document.getElementById('displayGeography').textContent = studentData.subjects.geography;
+            document.getElementById('displayGeography').className = studentData.failedSubjects.includes('geography') ? 'subject-fail' : '';
+
+            document.getElementById('displayTotal').textContent = studentData.totalMarks + '/500';
+            document.getElementById('displayPercentage').textContent = studentData.percentage;
+
+            const percentageDisplay = document.getElementById('percentageDisplay');
+            percentageDisplay.className = studentData.status === 'pass' ? 'percentage pass' : 'percentage fail';
+
+            const statusDisplay = document.getElementById('statusDisplay');
+            statusDisplay.textContent = `Status: ${studentData.status.toUpperCase()}`;
+            statusDisplay.className = studentData.status === 'pass' ? 'status pass' : 'status fail';
+
+            if (studentData.status === 'fail') {
+                if (studentData.percentage < 33) { statusDisplay.textContent += ' (Overall percentage below 33%)'; }
+                else if (studentData.failedSubjects.length > 0) { statusDisplay.textContent += ` (Failed in ${studentData.failedSubjects.length} subject(s))`; }
+            }
+
+            document.getElementById('resultContainer').style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>
