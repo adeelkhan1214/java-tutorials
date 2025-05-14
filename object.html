@@ -67,9 +67,10 @@
 
             resultDiv.innerHTML = "";
             tableDiv.innerHTML = "";
-            if (isNaN(number) || isNaN(length)) {
+            if (isNaN(number) || isNaN(length)|| number<0 || length<0) {
                 resultDiv.innerHTML = "Please enter a valid number!";
                 return;
+                // check for negative number also add this check 
             }
             if (number % 2 === 0) { resultDiv.innerHTML = `${number} is <strong>even</strong>` }
             else {

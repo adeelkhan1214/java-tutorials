@@ -105,7 +105,9 @@
             function storeFormData (data){
                 let storedData = JSON.parse(localStorage.getItem('formsubmissions')) || [];
                 storedData.push(data);
-                localStorage.setItem('formsubmissions', JSON.stringify(storedData));}
+                localStorage.setItem('formsubmissions', JSON.stringify(storedData));
+            console.log("alert detected")}
+            
         });
 
     </script>
