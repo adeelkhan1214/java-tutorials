@@ -1,9 +1,8 @@
-// Generate random number between min and max (inclusive)
+
 function rndNumber(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// Game setup
 const min = 1;
 const max = 100;
 const secretNumber = rndNumber(min, max);
@@ -11,7 +10,6 @@ let attempts = 0;
 
 console.log(`Guess a number between ${min} and ${max}`);
 
-// Game function
 function guessNumber() {
     const readline = require('readline').createInterface({
         input: process.stdin,
@@ -30,7 +28,7 @@ function guessNumber() {
             }
 
             if (userGuess === secretNumber) {
-                console.log(`🎉 Congratulations! You guessed ${secretNumber} in ${attempts} attempts!`);
+                console.log(` Congratulations! You guessed ${secretNumber} in ${attempts} attempts!`);
                 readline.close();
             } else if (userGuess < secretNumber) {
                 console.log('Too low! Try again.');
