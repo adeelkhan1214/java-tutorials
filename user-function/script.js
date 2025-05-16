@@ -10,6 +10,7 @@ let attempts = 0;
 
 console.log(`Guess a number between ${min} and ${max}`);
 
+
 function guessNumber() {
     const readline = require('readline').createInterface({
         input: process.stdin,

@@ -6,21 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="demo">
-        <h1>js break</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, aliquid.</p>
-        <div id="box"></div>
-        <script>
-       const cars1 = ["Saab", "Volvo", "BMW"];
-       document.getElementById("demo").innerHTML = cars1;
-      
-       const cars = [];
-cars[0]= "Saab";
-cars[1]= "Volvo";
-cars[2]= "BMW";
-document.getElementById("demo").innerHTML = cars;
+        <h1>guessing number</h1>
+        <p>guess the number between 1 and 100</p>
+        <button  onclick="document.getElementById('demo').innerHTML = rndNumber(0,100)">click</button>
+        <p id="demo"></p>
 
+        <script>
+            function rndNumber (min,max) {
+                return Math.floor(Math.random() * (max - min)) + min ;
+            }
+
+      
         </script>
-    </div>
 </body>
 </html>
