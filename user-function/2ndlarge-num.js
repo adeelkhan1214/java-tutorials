@@ -1,9 +1,4 @@
 
-// const arr = [54,2, 3, 4, 4, 5, 5, 56, 4];
-
-// const secondLast = arr[arr.length - 2];
-
-// console.log("Second last element is:", secondLast);
 const arr = [2, 3, 4, 4, 5, 5, 55, 56, 4];
 
 let largest = arr[0];
