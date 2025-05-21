@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html events </title>
+</head>
+
+<body>
+  <ul id="dam">  
+    <li id="cam">adeel</li>
+    <li id="sam">shan</li>
+    <a href="https://google.com" id="google">google</a>
+  </ul>
+  <button id="clickBtn">Click Me</button>
+<input type="text" id="nameInput" placeholder="Type your name" />
+<div id="hoverBox" style="width: 200px; height: 100px; background: lightblue;">Hover here</div>
+<p id="dblText">Double-click me</p>
+<form id="myForm">
+  <input type="text" id="email" placeholder="Enter email" />
+  <button type="submit">Submit</button>
+</form>
+
+    <script>       
+   document.getElementById("dam").addEventListener('click', function (e){console.log("clicked inside ul");  })
+   document.getElementById("cam").addEventListener('click', function (e){console.log("clicked "); 
+    e.stopPropagation ()
+     })
+     document.getElementById("google").addEventListener('click', function (e){console.log("clicked google");
+      e.preventDefault()
+       })
+       document.querySelector("#dam").addEventListener('click', function (e){console.log(e.target);  } ) 
+       document.querySelector("#dam").addEventListener('click', function (e){console.log(e.target.parentNode);
+        let removeIT = e.target.parentNode
+        removeIT.remove() 
+         } ) 
+        //  button click
+let btn = document.getElementById("clickBtn");
+btn.addEventListener("click", function (){
+  console.log("button clicked!")
+})
+// button text change
+// btn.addEventListener("click", function (){
+//   btn.textContent("double clicked!")
+// })
+let input = document.getElementById("nameInput");
+input.addEventListener("input", function (){
+  console.log("you have written:", input.value);
+});
+ let hover = document.getElementById("hoverBox");
+ hover.addEventListener("mouseover", function (){
+  console.log("you have hover on it!");
+ });
+ let dbl = document.getElementById("dblText");
+dbl.addEventListener("dblclick", function () {
+  console.log("You double-clicked!");
+});
+
+    </script>
+</body>
+
+</html>  

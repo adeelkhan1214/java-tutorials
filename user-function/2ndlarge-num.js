@@ -1,8 +1,8 @@
 
 const arr = [2, 3, 4, 4, 5, 5, 55, 56, 4];
 
-let largest = arr[0];
-let secondLargest = arr[0];
+let largest = arr [0];
+let secondLargest = arr [0];
 
 for (let i = 1; i < arr.length; i++) {
   if (arr[i] > largest) {

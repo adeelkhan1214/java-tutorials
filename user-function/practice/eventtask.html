@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+</head>  
+<body style="height: 2000px;">
+    <button id="movedown">mousedown</button>
+    <button id="moveup">mouseup</button>
+    <button id="Enter">Enter</button>
+    <button id="leave">leave</button>
+    <button id="move">move</button>
+    <button id="menu">menu</button>
+    <input type="text" id="inputBox" placeholder="write something here..">
+
+    <script>
+        let down = document.getElementById("movedown");
+        down.addEventListener("mousedown", function () {
+            alert("Mouse button pressed down!");
+        });
+
+        let up = document.getElementById("moveup");
+        up.addEventListener("mouseup", function () {
+            alert("Mouse button released!");
+        });
+
+        let Entery = document.getElementById("Enter");
+        Entery.addEventListener("mouseenter", function () {
+            alert("Mouse entered the button!");
+        });
+
+        let lev = document.getElementById("leave");
+        lev.addEventListener("mouseleave", function () {
+            alert("Mouse left the button!");
+        });
+
+        let mv = document.getElementById("move");
+        mv.addEventListener("mousemove", function () {
+            alert("Mouse moved over the button!");
+        });
+
+        let me = document.getElementById("menu");
+        me.addEventListener("contextmenu", function (e) {
+            alert("Right-click menu opened!");
+        });
+        window.addEventListener("load",function (){
+            alert("window is loaded!");
+        });
+        window.addEventListener("resize",function (){
+            alert("window is resized!");
+        });
+        window.addEventListener("scroll",function (){
+            alert("window is scrolled!");
+        });
+        window.addEventListener("beforeunload",function (e){
+            e.preventDefault();
+            e.returnValue;
+        });
+        let input = document.getElementById("inputBox");
+        input.addEventListener("keypress",function(event){
+            alert("keypress is:", event.key);
+        });
+        input.addEventListener("keyup",function(event){
+            alert("keyup is:", event.key);
+        });
+        input.addEventListener("keydown",function(event){
+            alert("keydown is:", event.key);
+        });
+        input.addEventListener("cut",function(event){
+            alert("action cut is:", event.key);
+        });
+        input.addEventListener("copy",function(event){
+            alert("action copy is:", event.key);
+        });
+        input.addEventListener("paste",function(event){
+            alert("action paste is:", event.key);
+        });
+        down.addEventListener("touchstart",function(event){
+            alert("touchstart is!");
+        });
+        down.addEventListener("touchmove",function(event){
+            alert("touchmove is!");
+        });
+        down.addEventListener("touchend",function(event){
+            alert("touchend is!");
+        });
+
+
+    </script>
+</body>
+</html>

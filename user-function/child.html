@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myBox">
+        <p>Child 1</p>
+        <p>Child 2</p>
+        <p>Child 3</p>
+      </div>
+      <table id="myTable" border="1">
+        <caption>Student Marks</caption>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Marks</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Alice</td>
+            <td>85</td>
+          </tr>
+          <tr>
+            <td>Bob</td>
+            <td>90</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>Total</td>
+            <td>175</td>
+          </tr>
+        </tfoot>
+      </table>
+      
+
+
+      <script>
+        let box = document.getElementById("myBox")
+        let arr = box.parentElement ;
+        console.log("parent of my box:",parent) 
+        // children,childnodes,[],firstChild,lastchild
+      </script>
+</body>
+</html>

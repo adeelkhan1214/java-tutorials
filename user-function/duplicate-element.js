@@ -1,40 +1,10 @@
 
-const numbers = [1, 2, 1, 2, 3, 4, 2, 4, 5, 3, 5, 65];
-const duplicate = [];
-const seen = [];
-let i = 0;
-while (i<numbers.length) {
-let isduplicate =false;
-let isNextDuplicate = true;
 
-
-let j = 0;
-while (j< seen.length) { if (seen[j] === numbers[i]){
-    isduplicate = true;
-    break;}
-   j++; 
-}
-if (isduplicate) {
-    let k = 0 ;
-    while (k<duplicate.length) {
-        if(duplicate[k] === numbers[i])
-
-       { isNextDuplicate = false;
-        break ;
-
-
-       }
-       k++  
-    }
-    if (isNextDuplicate) {
-        duplicate[duplicate.length] = numbers[i]
-
-        
+let arr = [1,3,2,5,6,3,5,6,7,8,7]
+for (let i = 1; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+   if(arr[i] == arr[j]){
+    console.log("Duplicate found:", arr[i])
+   }
     }
 }
-else{
-    seen[seen.length] =numbers[i];
-}
-i++
-}
-console.log("duplicate number is :",duplicate)
