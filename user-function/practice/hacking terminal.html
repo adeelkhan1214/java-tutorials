@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hacking terminals</title>
+    <style>
+        body{
+            background-color: green;
+            color: rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <div>intializing of hacking  </div>
+    <script>
+          const addItem = async (Items) => {
+await delayrandom ();
+ let div = document.createElement("div");
+ div.innerHTML= Items; 
+document.body.append(div)
+  }
+    const delayrandom = () => {
+        return new Promise((resolve, reject) => {
+            timeout = 1 +5*Math.random();
+            setTimeout(( ) => {
+                resolve()
+            }, timeout*1000 );
+             
+        })
+    }
+        let text =[ "Bypassing firewall...",
+  "Decrypting passwords...",
+  "Accessing secure database...",
+  "Uploading virus...",
+  "Extracting confidential files..."];
+  for (const Items of text) {
+    addItem(Items)
+  }
+ 
+    </script>
+</body>
+</html>
