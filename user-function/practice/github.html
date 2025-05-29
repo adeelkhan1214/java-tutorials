@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>githubcheck </title>
+    <style>
+        body {
+            margin-top: 150px;
+            margin-bottom: 150px;
+            margin-left: 150px;
+            margin-right: 150px;
+            background-color: black;
+            text-align: center;
+            align-items: center;
+        }
+
+        button {
+            
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background-color: rgb(6, 255, 172);
+            color: rgb(59, 38, 9);
+            font-size: large;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h1>Checking Github Account </h1>
+        </div>
+        <div><input type="text" id="username" placeholder="Check Github Account"></div>
+        <button onclick="githHubCheck()">Check</button>
+        <div id="result"></div>
+    </div>
+    <script>
+        async function githHubCheck() {
+            const username = document.getElementById("username").value.trim();
+            const resultDiv = document.getElementById("result");
+            if (!username) {
+                resultDiv.textContent = "Enter your github account";
+                resultDiv.style.color = "red"
+                return;
+            }
+
+            resultDiv.textContent = " checking..."
+            resultDiv.style.color = "black" 
+            try {
+                let response = await fetch(`https://api.github.com/users/${username}`)
+                if (response.status === 200) {
+                    resultDiv.textContent = `✅ user githhub  "${username}" account exists`;
+                    resultDiv.style.color = "green";
+                }
+                else if (response.status === 400) {
+                    resultDiv.textContent = `❌ github user  "${username}"  does not exist`;
+                    resultDiv.style.color = "red";
+                }
+                else {
+                    resultDiv.textContent = `⚠️ error in fetching the data of  "${username}" github account`;
+                    resultDiv.style.color = "red";
+                }
+            } catch (error) {
+                resultDiv.textContent = `⚠️ error in fetching data from  "${username}" github account`;
+                resultDiv.style.color = "orange";
+
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>
