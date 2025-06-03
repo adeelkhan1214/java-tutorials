@@ -9,7 +9,7 @@ body {
 }
 
 .right {
-    width: 75vw;
+    width: 70vw;
     margin-top: 15px;
     margin-bottom: 10px;
     position: relative;
@@ -111,10 +111,12 @@ a {
 .playbar{
     bottom: 0;
     position: absolute;
-    width: 100%;
-    background-color: rgb(121, 240, 121);
+    width: 60%;
+    background-color: rgb(255, 255, 255);
     border-radius: 3px;
-    padding: 12px;
+  
+    position: fixed;
+    justify-content: center;
     
 }
 .songbutton{
@@ -122,3 +124,29 @@ a {
     justify-content: center;
     gap: 2px;
 }
+.songslist ul{
+    padding-bottom: 12px;
+
+}
+.songslist ul li{
+    list-style:none;
+    display: flex;
+    gap: 34px;
+    cursor:pointer;
+    padding: 12px 0;
+    border: 1px solid white;
+    margin: 12px 0;
+    padding: 13px;
+    border-radius: 5px;
+    margin-right: 3px;
+      
+     
+}
+.playnow {
+    display: flex  ;
+    font-family: 10px;
+    width: 64px;
+    justify-content: space space-between;
+    align-items: center;
+}
+
