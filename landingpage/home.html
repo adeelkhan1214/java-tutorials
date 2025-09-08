@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Crypto Chart Patterns & Indicators</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">Adeel Trader</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#patterns">Patterns</a>
+            <a href="#indicators">Indicators</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-right">
+            <input type="text" placeholder="Search..."> 
+            <button class="search-btn">🔍</button>
+            <button class="toggle-theme">☀️</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1>Master Crypto Chart Patterns & Indicators</h1>
+                <p>Learn candlesticks, chart patterns, and indicators with visuals & examples.</p>
+                <button class="cta-button">Start Learning</button>
+            </div>
+            <div class="hero-image">
+                <img src="cr2.webp" alt="Illustrative image of a trading dashboard">
+            </div>
+        </section>
+
+        <section class="candlestick-basics">
+            <h2>What are Candlesticks?</h2>
+            <div class="content-wrapper">
+                <div class="candlestick-image">
+                    <img src="cr1.webp" alt="Diagram showing the anatomy of a candlestick chart">
+                </div>
+                <div class="candlestick-text">
+                    <p>Candlestick charts are a popular way to display price movements of a financial asset. Each "candlestick" represents price action over a specific period of time (e.g., one minute, one day, etc.).</p>
+                    <ul>
+                        <li>Body: The rectangular part of the candlestick, representing the open and close prices.</li>
+                        <li>Wicks/Shadows: The thin lines extending from the body, showing the high and low prices reached during the period.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="patterns" class="candlestick-patterns">
+            <h2>Popular Candlestick Patterns</h2>
+            <div class="pattern-grid">
+                <div class="pattern-card">
+                    <h3>Hammer</h3>
+                    <img src="f1.png" alt="Diagram of a Hammer candlestick pattern">
+                    <p>A bullish reversal pattern with a small body and a long lower wick, indicating a potential bottom.</p>
+                </div>
+                <div class="pattern-card">
+                    <h3>Doji</h3>
+                    <img src="f2.jpeg" alt="Diagram of a Doji candlestick pattern">
+                    <p>Characterized by a very small or non-existent body, suggesting indecision in the market.</p>
+                </div>
+                <div class="pattern-card">
+                    <h3>Engulfing</h3>
+                    <img src="f3.jpeg" alt="Diagram of a Bullish Engulfing pattern">
+                    <p>A large body that completely covers the previous period's body, signaling a strong shift in momentum.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="chart-patterns">
+            <h2>Top Chart Patterns</h2>
+            <div class="pattern-block pattern-block-left">
+                <img src="cr1.webp" alt="Chart pattern showing Head & Shoulders">
+                <div class="pattern-text">
+                    <h3>Head & Shoulders</h3>
+                    <p>A classic bearish reversal pattern with three peaks, a "head" in the middle, and two smaller "shoulders" on either side. A break below the neckline confirms the pattern.</p>
+                </div>
+            </div>
+            <div class="pattern-block pattern-block-right">
+                <div class="pattern-text">
+                    <h3>Double Bottom</h3>
+                    <p>A bullish reversal pattern shaped like a "W," formed when the price drops to a low, rebounds, drops to a similar low again, and then reverses direction to the upside.</p>
+                </div>
+                <img src="db.jpeg" alt="Chart pattern showing a Double Bottom">
+            </div>
+        </section>
+
+        <section id="indicators" class="indicators-section">
+            <h2>Most Used Indicators in Crypto Trading</h2>
+            <div class="indicator-tabs">
+                <button class="tab-button active" data-tab="rsi">RSI</button>
+                <button class="tab-button" data-tab="macds">MACD</button>
+                <button class="tab-button" data-tab="ma">Moving Averages</button>
+                <button class="tab-button" data-tab="bb">Bollinger Bands</button>
+            </div>
+            <div id="rsi" class="indicator-content active">
+                <img src="cr2.webp" alt="Example chart with RSI indicator">
+                <p>The **Relative Strength Index (RSI)** is a momentum oscillator that measures the speed and change of price movements. It is a widely used tool for identifying overbought or oversold conditions.</p>
+            </div>
+            </section>
+
+        <section class="interactive-demo">
+            <h2>Interactive Demo</h2>
+            <div class="chart-container">
+                <img src="cr2.webp" alt="Interactive chart demo">
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <button class="accordion-header">What's the difference between RSI and MACD?</button>
+                    <div class="accordion-content">
+                        <p>RSI is a momentum oscillator measuring the speed of price change, while MACD is a trend-following momentum indicator that shows the relationship between two moving averages.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">How do I use moving averages?</button>
+                    <div class="accordion-content">
+                        <p>Moving Averages are used to identify the direction of the trend. A common strategy is to buy when a shorter-term MA crosses above a longer-term MA (a "golden cross").</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Quick Links</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+            </div>
+            <div class="social-icons">
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+            </div>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Subscribe to our newsletter">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <p>&copy; 2024 CryptoEdu. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for interactive elements (optional)
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                button.classList.toggle('active');
+                if (button.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = '0';
+                }
+            });
+        });
+
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.indicator-content').forEach(content => content.classList.remove('active'));
+                
+                button.classList.add('active');
+                document.getElementById(button.dataset.tab).classList.add('active');
+            });
+        });
+
+        
+    </script>
+</body>
+</html>

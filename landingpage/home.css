@@ -1,0 +1,495 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;700&display=swap');
+
+/* Basic Styles */
+:root {
+    --bg-start: #0b0f19;
+    --bg-end: #1b2230;
+    --card-bg: rgba(27, 34, 48, 0.5); /* Semi-transparent card background */
+    --green-bullish: #2ecc71;
+    --red-bearish: #e74c3c;
+    --purple-accent: #ef1538;
+    --text-color: #f1f1f1;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    background: linear-gradient(135deg, var(--bg-start), var(--bg-end));
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--purple-accent);
+}
+
+button, input {
+    font-family: inherit;
+}
+
+/* 1. Header (Sticky Navbar) */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--purple-accent);
+}
+
+.navbar nav a {
+    margin-left: 1.5rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right input {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: var(--text-color);
+    width: 150px;
+}
+
+.header-right .search-btn,
+.header-right .toggle-theme {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+}
+
+/* Sections */
+section {
+    padding: 4rem 5%;
+    overflow: hidden;
+}
+
+/* 2. Hero Section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90vh;
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 50%;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    padding: 0.75rem 2rem;
+    background-color: var(--purple-accent);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ef1538;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 3. Candlestick Basics Section */
+.candlestick-basics h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.candlestick-basics .content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.candlestick-image, .candlestick-text {
+    flex: 1;
+}
+
+.candlestick-image img {
+    width: 100%;
+    height: auto;
+}
+
+.candlestick-text ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.candlestick-text ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* 4. Popular Candlestick Patterns */
+.candlestick-patterns h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.pattern-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.pattern-card {
+    background-color: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.pattern-card:hover {
+    transform: translateY(-5px);
+}
+
+.pattern-card h3 {
+    margin-bottom: 1rem;
+}
+
+.pattern-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+}
+
+/* 5. Chart Patterns Section */
+.chart-patterns h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.pattern-block {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    min-height: 50vh;
+}
+
+.pattern-block-right {
+    flex-direction: row-reverse;
+}
+
+.pattern-block img {
+    flex: 1;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.pattern-text {
+    flex: 1;
+}
+
+/* 6. Indicators Section */
+.indicators-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.indicator-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tab-button {
+    padding: 0.75rem 1.5rem;
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-button:hover, .tab-button.active {
+    background-color: var(--purple-accent);
+    border-color: var(--purple-accent);
+}
+
+.indicator-content {
+    display: none;
+    text-align: center;
+}
+
+.indicator-content.active {
+    display: block;
+}
+
+.indicator-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+/* 7. Interactive Demo */
+.interactive-demo h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.chart-container {
+    background-color: var(--card-bg);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.chart-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 8. FAQ Section */
+.faq-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.accordion-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    background-color: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.accordion-header {
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    text-align: left;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-header:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.accordion-header:after {
+    content: '+';
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.accordion-header.active:after {
+    content: '-';
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    padding: 0 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.accordion-content p {
+    padding-bottom: 1.5rem;
+    padding-top: 0.5rem;
+}
+
+/* 9. Footer */
+.site-footer {
+    background-color: var(--bg-start);
+    padding: 3rem 5%;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.footer-links a,
+.social-icons a {
+    margin-right: 1.5rem;
+}
+
+.newsletter-form {
+    display: flex;
+}
+
+.newsletter-form input {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.75rem 1rem;
+    border-radius: 25px;
+    color: var(--text-color);
+    margin-right: 0.5rem;
+}
+
+.newsletter-form button {
+    background-color: var(--purple-accent);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #ef1538;
+}
+
+.site-footer p {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    .navbar nav {
+        margin-top: 1rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar nav a {
+        margin: 0.5rem 0;
+    }
+
+    .header-right {
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-section {
+        flex-direction: column-reverse;
+        text-align: center;
+        height: auto;
+        padding-top: 2rem;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        margin-top: 2rem;
+    }
+
+    .candlestick-basics .content-wrapper,
+    .pattern-block {
+        flex-direction: column;
+    }
+    
+    .pattern-block-right {
+        flex-direction: column;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-links, .social-icons, .newsletter-form {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+ 
