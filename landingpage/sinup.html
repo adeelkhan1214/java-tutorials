@@ -35,31 +35,44 @@
 
         <div class="input-name">
             <i class="fa-solid fa-user" style="color: white; font-size: 24px;"></i>
+            <div class="field">
             <input type="text" id="firstName" placeholder="First Name" class="name" required>
-            <small  id="firstNameError" style="color:red;"></small>
-            <span>
+            <small  id="firstNameError" style="color:orangered;"></small><br>
+            </div>
+
+            <!-- <span> -->
+
                 <i class="fa-solid fa-user" style="color: white; font-size: 24px;"></i>
-                <input type="text" id="lastName" placeholder="Last Name" class="name" required>
-                <small  id="lastNameError" style="color:red;"></small>
-            </span>
+                <div class="field">
+                <input type="text" id="lastName" placeholder="Last Name" class="name" required><br>
+                <small  id="lastNameError" style="color:orangered;"></small>
+                </div>
+
+            <!-- </span> -->
         </div>
 
          <div class="input-name">
             <i class="fa-solid fa-envelope" style="color:white; font-size: 24px;"></i>
-            <input type="text" id="email" placeholder="Email" class="text-name" required>
-              <small  id="emailError" style="color:red;"></small>
+            <div class="field">
+            <input type="text" id="email" placeholder="Email" class="text-name" required><br>
+               <small  id="emailError" ></small> 
+         </div>
         </div>
 
          <div class="input-name">
             <i class="fa-solid fa-lock" style="color: white; font-size: 24px;"></i>
-            <input type="password" id="password" placeholder="Password" class="text-name" required>
-            <small  id="passwordError" style="color:red;"></small>
+            <div class="field">
+            <input type="password" id="password" placeholder="Password" class="text-name" required><br>
+            <small  id="passwordError" ></small>
+            </div>
         </div>
 
          <div class="input-name">
             <i class="fa-solid fa-lock" style="color:white; font-size: 24px;"></i>
+            <div class="field">
             <input type="password" id="confirmPassword" placeholder="Conform Password" class="text-name" required>
-            <small  id="confirmPasswordError" style="color:red;"></small>
+            <small  id="confirmPasswordError" ></small>
+            </div>
           
         </div>
 
@@ -71,10 +84,7 @@
     </form>
    </div>
 </div>
-        <!-- <div class="regbtn"><button class="sinup">Register</button>
-          <button class="login">Login</button>
-          </div>
-    </div> -->
+        
    
   <div class="footer-container">
     <p>© 2025 YourCompany. All rights reserved.</p>

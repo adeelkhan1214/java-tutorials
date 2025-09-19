@@ -9,7 +9,7 @@
     width: 100%;
     background-size: cover;
     background-position: center;
-    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.3)),url(../image.avif);
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.3)),url("image.jpg");
 }
 nav{
       display: flex;
@@ -33,8 +33,7 @@ nav{
     color: white;
     font-size: 28px;
     order: 3;
-    /* margin-left: auto; */
-    /* padding-right: 90px; */
+
 }
 span{
     color:#ea1538 ;
@@ -144,23 +143,21 @@ margin-top: 70px;}
   }
   @media (max-width: 768px) {
   .listitem{
-    /* display: none; hide links */
-      display: none;   /* hide links on mobile */
-    flex-direction: column; /* jab show karo to stack */
+  
+      display: none;   
+    flex-direction: column; 
     background: #111;
     position: absolute;
-    top: 60px;  /* navbar ke neeche */
+    top: 60px;  
     left: 0;
     width: 100%;
     text-align: center;
   }
    nav {
-    justify-content: space-between;   /* links center me rahenge */
+    justify-content: space-between;   
   }
   .hamburger {
-    /* display: block;
-    font-size: 24px;
-    cursor: pointer; */
+ 
      display: block;
     font-size: 24px;
     cursor: pointer;
@@ -193,10 +190,10 @@ margin-top: 70px;}
   border-top: 5px solid #ea1538;
   border-bottom:5px solid #ea1538;
   border-radius: 10px;
-  /* box-shadow: 0 0 7px 5px rgba(0,0,0,0.1); */
+  
 }
 .registration-form input {
-  width: auto;  /* inputs full width lein */
+  width: auto;  
   padding: 10px;
   margin: 8px 0;
   border: none;
@@ -211,22 +208,19 @@ margin-top: 70px;}
     color: #ea1538;
 }
 .input-name{
-  /* position: relative;
-  width: 90%;
-  margin: 20px auto;
-   padding: 10px 10px 10px 10px; */
+  
     display: flex;
-  justify-content: center; /* center horizontally */
+  justify-content: center; 
   align-items: center;
   gap: 10px;
-  flex-wrap: wrap; /* mobile pe neeche shift ho jaye */
+  flex-wrap: wrap; 
   margin: 10px 0;
 
 }
 .input-name i {
   font-size: 20px;
   color: white;
-  min-width: 30px;   /* icon کی fix width تاکہ input دبے نہیں */
+  min-width: 30px;  
   text-align: center;
 }
 .text-name{
@@ -245,8 +239,8 @@ margin-top: 70px;}
 
 }
 .secondbutton button {
-  width: 100%;          /* ✅ button form ke andar fit hoga */
-  max-width: 200px;     /* ✅ optional: ek reasonable max width */
+  width: 100%;         
+  max-width: 200px;    
   padding: 12px;
   border-radius: 30px;
   background: #ea1538;
@@ -258,18 +252,18 @@ margin-top: 70px;}
 
 @media (max-width: 768px) {
   .registration {
-    width: 90%; /* small screens pe form chota ho jaye */
+    width: 90%; 
   }
 }
 @media (max-width: 420px) {
   .registration {
-    width: 95%;   /* ✅ form screen ke andar adjust ho jaye */
+    width: 95%;  
   }
   .secondbutton button {
-    width: 100%;  /* ✅ chhoti screen pe full width */
+    width: 100%;  
   }
   footer {
-    font-size: 12px; /* ✅ small text for small screens */
+    font-size: 12px; 
     padding: 15px 0;
   }
 }

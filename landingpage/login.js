@@ -97,7 +97,7 @@ login.addEventListener("click", function (e) {
       const user = userCredential.user;
       alert("✅ Login successful!");
       console.log("User Info:", user);
-      // yahan tum redirect kar sakte ho e.g.
+     
       window.location.href = "home.html";
     })
     .catch((error) => {

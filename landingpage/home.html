@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Crypto Chart Patterns & Indicators</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -135,6 +136,29 @@
         </section>
 
     </main>
+     <button class="chat-btn" id="openChat">
+    <i class="fa-solid fa-comment"></i>
+  </button>
+    <!-- CHAT CARD -->
+    <div class="chat-card" id="chatCard">
+    <div class="chat-header">
+      Chat
+      <span class="close" id="closeChat">&times;</span>
+    </div>
+    <div class="chat-messages"> 
+      <p><strong>Dear User:</strong> Hi! How can I help you?</p>
+    </div>
+    <div class="chat-input">
+      <input id="messageInput"  type="text" placeholder="Type a message...">
+      <button id="sendBtn"><i class="fa-solid fa-paper-plane" ></i></button>
+    </div>
+    <!-- admin panel
+    <div class="admin-panel">
+  <input type="text" id="adminInput" placeholder="Admin reply...">
+  <button id="adminSendBtn">Send as Admin</button>
+</div> -->
+
+  </div>
 
     <footer class="site-footer">
         <div class="footer-content">
@@ -155,31 +179,6 @@
         <p>&copy; 2024 CryptoEdu. All rights reserved.</p>
     </footer>
 
-    <script>
-        // JavaScript for interactive elements (optional)
-        document.querySelectorAll('.accordion-header').forEach(button => {
-            button.addEventListener('click', () => {
-                const content = button.nextElementSibling;
-                button.classList.toggle('active');
-                if (button.classList.contains('active')) {
-                    content.style.maxHeight = content.scrollHeight + 'px';
-                } else {
-                    content.style.maxHeight = '0';
-                }
-            });
-        });
-
-        document.querySelectorAll('.tab-button').forEach(button => {
-            button.addEventListener('click', () => {
-                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-                document.querySelectorAll('.indicator-content').forEach(content => content.classList.remove('active'));
-                
-                button.classList.add('active');
-                document.getElementById(button.dataset.tab).classList.add('active');
-            });
-        });
-
-        
-    </script>
+   <script type="module" src="home.js"></script>
 </body>
 </html>
