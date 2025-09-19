@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="sinup.css">
+
+
+</head>
+<body>
+    <div class="hero">
+        <nav >
+            <button type="button" class="hamburger" id="hamburger">
+  <i class="fa-solid fa-bars"></i>
+
+  
+</button> 
+        <ul class="listitem">
+            <li><a href="#">Home</a></li>
+             <li><a href="#">Contact</a></li>
+              <li><a href="#">services</a></li>
+               <li><a href="#">About</a></li>
+        </ul>
+        <h2 class="logo">ADEEL <span>Trader</span></h2> 
+       
+       
+ </nav  >
+ <div class="registration">
+   <h1>Registration Form</h1>
+   <div class="registration-form">
+    <form id="signupForm" >
+
+        <div class="input-name">
+            <i class="fa-solid fa-user" style="color: white; font-size: 24px;"></i>
+            <div class="field">
+            <input type="text" id="firstName" placeholder="First Name" class="name" required>
+            <small  id="firstNameError" style="color:orangered;"></small><br>
+            </div>
+
+            <!-- <span> -->
+
+                <i class="fa-solid fa-user" style="color: white; font-size: 24px;"></i>
+                <div class="field">
+                <input type="text" id="lastName" placeholder="Last Name" class="name" required><br>
+                <small  id="lastNameError" style="color:orangered;"></small>
+                </div>
+
+            <!-- </span> -->
+        </div>
+
+         <div class="input-name">
+            <i class="fa-solid fa-envelope" style="color:white; font-size: 24px;"></i>
+            <div class="field">
+            <input type="text" id="email" placeholder="Email" class="text-name" required><br>
+               <small  id="emailError" ></small> 
+         </div>
+        </div>
+
+         <div class="input-name">
+            <i class="fa-solid fa-lock" style="color: white; font-size: 24px;"></i>
+            <div class="field">
+            <input type="password" id="password" placeholder="Password" class="text-name" required><br>
+            <small  id="passwordError" ></small>
+            </div>
+        </div>
+
+         <div class="input-name">
+            <i class="fa-solid fa-lock" style="color:white; font-size: 24px;"></i>
+            <div class="field">
+            <input type="password" id="confirmPassword" placeholder="Conform Password" class="text-name" required>
+            <small  id="confirmPasswordError" ></small>
+            </div>
+          
+        </div>
+
+        <div class="input-name">
+            <!-- <input type="submit" class="buttoni" value="Register"> -->
+             <button class="sinup secondbutton" id="register" >Register</button>
+        </div>
+
+    </form>
+   </div>
+</div>
+        
+   
+  <div class="footer-container">
+    <p>© 2025 YourCompany. All rights reserved.</p>
+    <ul class="footer-links">
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms & Conditions</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+  </div>
+
+
+  </div>
+    <script type="module" src="sinup.js"></script>
+</body>
+</html>
