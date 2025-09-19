@@ -103,6 +103,8 @@
   // =================== chat.js =================
 
 // Firebase Imports
+// import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
 import { getDatabase, ref, push, onChildAdded, onValue } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
 
@@ -121,6 +123,26 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
+
+// const auth = getAuth(app);
+
+// const adminLink = document.getElementById("admin-link");
+// const ALLOWED_EMAIL = "aqeelabbas1849@gmail.com"; // <-- apni admin wali email lagao
+
+// onAuthStateChanged(auth, (user) => {
+//   if (!user) {
+//     adminLink.classList.add("hidden"); // login nahi kiya
+//     return;
+//   }
+
+//   const email = (user.email || "").toLowerCase();
+//   if (email === ALLOWED_EMAIL.toLowerCase()) {
+//     adminLink.classList.remove("hidden"); // sirf admin ko dikhayega
+//   } else {
+//     adminLink.classList.add("hidden"); // baki sab ko hide
+//   }
+// });
+
 
 // DOM Elements
 const leftDiv = document.querySelector(".left");

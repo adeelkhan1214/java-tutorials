@@ -534,7 +534,7 @@ a{
       bottom: 80px;
       right: 20px;
       width: 345px;
-      height: 470px;
+      height: 430px;
       background:white ;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -591,3 +591,4 @@ a{
       cursor: pointer;
       color: white;
     }
+.hidden{display: none;}
