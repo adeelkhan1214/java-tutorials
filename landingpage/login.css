@@ -35,8 +35,7 @@ nav{
     color: white;
     font-size: 28px;
     order: 3;
-    /* margin-left: auto; */
-    /* padding-right: 90px; */
+  
 }
 span{
     color:#ea1538 ;
@@ -144,23 +143,21 @@ margin-top: 70px;}
   }
   @media (max-width: 768px) {
   .listitem{
-    /* display: none; hide links */
-      display: none;   /* hide links on mobile */
-    flex-direction: column; /* jab show karo to stack */
+    
+      display: none;  
+    flex-direction: column; 
     background: #111;
     position: absolute;
-    top: 60px;  /* navbar ke neeche */
+    top: 60px;   
     left: 0;
     width: 100%;
     text-align: center;
   }
    nav {
-    justify-content: space-between;   /* links center me rahenge */
+    justify-content: space-between;   
   }
   .hamburger {
-    /* display: block;
-    font-size: 24px;
-    cursor: pointer; */
+    cursor: pointer;
      display: block;
     font-size: 24px;
     cursor: pointer;
@@ -221,11 +218,11 @@ margin-top: 70px;}
 
 /* ✅ Hamburger toggle ke liye extra class */
 .listitem.show {
-  display: flex !important;   /* force show when hamburger active */
+  display: flex !important; 
   flex-direction: column;
   background: #111;
   position: absolute;
-  top: 60px;   /* nav ke neeche */
+  top: 60px;  
   left: 0;
   width: 100%;
   text-align: center;

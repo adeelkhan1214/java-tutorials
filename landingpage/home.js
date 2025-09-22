@@ -1,12 +1,7 @@
 
-
-
-// =================== chat js =================
-
-
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
 import { getDatabase, ref, push, onChildAdded } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
 
 // Firebase config
 const firebaseConfig = {
@@ -23,6 +18,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
+const auth = getAuth(app);
 
 // DOM elements
 const openBtn = document.getElementById("openChat");
@@ -32,23 +28,38 @@ const chatMessages = document.querySelector(".chat-messages");
 const input = document.getElementById("messageInput");
 const sendBtn = document.getElementById("sendBtn");
 
-
 // Open/close
 openBtn.addEventListener("click", () => chatCard.style.display = "flex");
 closeBtn.addEventListener("click", () => chatCard.style.display = "none");
 
 
-const userEmail = "user1@gmail.com";
+let userEmail = "";
+let firstName = "";
 
-// Push message to DB
-function sendMessage( senderType,text) {
-  if (!text) return;
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    userEmail = user.email;
+    let  emailName = userEmail.split("@")[0]; 
+     // extract before @
+       firstName = emailName.split(/[0-9]/)[0];
+
+     
+  } else {
+    console.warn("⚠️ No user logged in!");
+  }
+});
+    
+//  DATABASE
+
+function sendMessage(senderType, text) {
+  if (!text || !userEmail) return;
 
   const messagesRef = ref(db, "messages");
   push(messagesRef, {
-    sender: senderType, // "user" or "admin"
+    sender: senderType,
     text,
-     email: userEmail, 
+    email: userEmail,
+    firstName: firstName,  
     timestamp: Date.now()
   }).catch(err => console.error("Firebase push error:", err));
 }
@@ -65,19 +76,18 @@ input.addEventListener("keydown", (e) => {
   }
 });
 
-
-
 // Real-time listener for messages
 const messagesRef = ref(db, "messages");
 onChildAdded(messagesRef, (snapshot) => {
   const msg = snapshot.val();
   const p = document.createElement("p");
 
+  // ✅ Show actual firstName instead of full email
   if (msg.sender === "user") {
-    p.innerHTML = `<strong>User:</strong> ${msg.text}`;
+    p.innerHTML = `<strong></strong> ${msg.text}`;
     p.style.color = "orange";
   } else {
-    p.innerHTML = `<strong>Admin:</strong> ${msg.text}`;
+    p.innerHTML = `<strong></strong> ${msg.text}`;
     p.style.color = "green";
   }
 
@@ -90,10 +100,10 @@ onChildAdded(messagesRef, (snapshot) => {
 });
 
 
+
+
 // ==========intractive ui css  ==============
 
-
-  // JavaScript for interactive elements (optional)
         document.querySelectorAll('.accordion-header').forEach(button => {
             button.addEventListener('click', () => {
                 const content = button.nextElementSibling;
@@ -146,7 +156,4 @@ const appearOnScroll = new IntersectionObserver(function(entries, observer) {
     observer.unobserve(entry.target);
   });
 }, appearOptions);
-
-faders.forEach(fade => {
-  appearOnScroll.observe(fade);
-});
+             
